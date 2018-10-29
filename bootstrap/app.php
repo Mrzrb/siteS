@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__.'/../app/Services/Helpers.php';
 /*
 |--------------------------------------------------------------------------
 | Create The Application

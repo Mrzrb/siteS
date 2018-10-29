@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['namespace' => 'Site'], function () {
+    Route::get('/test', function(){
+        
+    });
+});
