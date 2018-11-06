@@ -46,16 +46,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($exception instanceof \ErrorException){
-            dd(1);return ;
-        }
-        if($exception instanceof \FatalThrowableError){
-            return ;
-        }
         return parent::render($request, $exception);
     }
 
     public function handle($request, $e){
-
+        
     }
 }

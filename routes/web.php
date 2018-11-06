@@ -11,13 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::group(['namespace' => 'Site'], function () {
     Route::get('/test', function(){
+        $data = [];
+    
+    });
+
+    Route::get('/', 'SiteController@index');
+
+    Route::group(['namespace' => 'Category'], function(){
+        Route::get('/ch{id}', 'CategoryController@index');
+    });
+    Route::group(['namespace' => 'News'], function(){
         
+        Route::get('/test', 'NewsController@index');
+        Route::get('/ch{ch}/{new}.html', 'NewsController@index');
     });
 });
