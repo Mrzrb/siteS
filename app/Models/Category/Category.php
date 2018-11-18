@@ -8,5 +8,7 @@ use App\Models\News\News;
 
 class Category extends Model
 {
-    //
+    public function getUrl(){
+        return url('/ch'.$this->id.'/');
+    }
 }

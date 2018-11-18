@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\News\News;
 use App\Models\Category\Category;
+use App\Models\TdkTpl\TdkService;
+
 class NewsController extends Controller
 {
     //
@@ -16,6 +18,7 @@ class NewsController extends Controller
         }
         $ret['new'] = $new;
         $ret['category'] = $ch;
+        $ret['tdk'] = TdkService::getSiteNewTdk($new->toArray());
         return view(env('tplSN').'.news')->withRet($ret);
     }
 }

@@ -1,8 +1,8 @@
 <head>
 <meta charset="utf-8">
-<title>
-
-</title>
+<title>{{$ret['tdk']['title']??''}}</title>
+<meta name="keywords" content="{{$ret['tdk']['keywords']??''}}">
+<meta name="description" content="{{$ret['tdk']['description']??''}}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="/tpl1/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>

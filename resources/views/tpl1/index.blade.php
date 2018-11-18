@@ -59,11 +59,11 @@
           @foreach($prods as $prod)
           <div class="col-sm-12 col-md-6 col-lg-6 hour24-left">
           
-            <div class="hour24-left-img"> <a href="./images/timthumb (5).jpg" title="{{$prod->title}}" target="_blank"> <img src="./images/timthumb (5).jpg" alt="{{$prod->title}}" /> </a> </div>
-            <h3 class="htitle-color" style="font-weight: 400;"><a href="./contents/131/928.html">{{$prod->name}}</a></h3>
+            <div class="hour24-left-img"> <a href="{{$prod->getUrl()}}" title="{{$prod->title}}" target="_blank"> <img src="./images/timthumb (5).jpg" alt="{{$prod->title}}" /> </a> </div>
+            <h3 class="htitle-color" style="font-weight: 400;"><a href="{{$prod->getUrl()}}">{{$prod->name}}</a></h3>
             <div class="mob-author">   
             <span class="time"><i class="iconfont icon-shijian"></i>  {{$prod->created_at}}</span>   
-            <span class="time liulan"><i class="iconfont icon-faxian"></i> 今日头条</span>
+            <span class="time liulan"><i class="iconfont icon-faxian"></i>{{$prod->category->name}}</span>
             </div>
             <div class="mob-sub"> {{mb_substr($prod->detail, 0, 20)}}</div>
           
@@ -90,18 +90,18 @@
         @foreach($news as $new)
           <div class="la-list02 line-botm clearfix">
             <div class="la-l-img"> 
-              <a href="./contents/141/965.html" target="_blank"> 
-                <img class="xyscale" src="./upload/images/2017/6/20172446227.jpg" alt="{{$new->title}}"> </img>
+              <a href="{{$new->getUrl()}}" target="_blank"> 
+                <img class="xyscale" src="" alt="{{$new->title}}"> </img>
               </a> 
             </div>
             <div class="la-r-text">
               <h3> 
-                <a href="./contents/141/965.html" class="htitle-color" target="_blank">{{$new->title}}</a> 
+                <a href="{{$new->getUrl()}}" class="htitle-color" target="_blank">{{$new->title}}</a> 
               </h3>
               <div class="mob-author"> 
                 <span class="time">
                   <i class="iconfont icon-mulutubiao"></i> 
-                  <a href="./contents/141/965.html" style="color: #bbb;">{{$new->category->name}}</a> 
+                  <a href="{{$new->category->getUrl()}}" style="color: #bbb;">{{$new->category->name}}</a> 
                 </span> 
                 <span class="time">
                   <i class="iconfont icon-shijian"></i> 

@@ -20,21 +20,21 @@
       <div class=" col-sm-12 col-md-6 col-lg-6  footer-right">
         <div class="copy-right">
           <div class="footer-tag-list"> 
-          
-          <a href="http://stl.siteserver.cn/" target="_blank">关于我们</a> 
-  
-          
-          <a href="http://docs.siteserver.cn/getting-started/index.html" target="_blank">加入我们</a> 
-  
-          
-          <a href="http://blog.siteserver.cn/" target="_blank">联系我们</a> 
-  
-          
-          <a href="http://bbs.siteserver.cn/" target="_blank">友情链接</a> 
+          <!-- <a href="http://stl.siteserver.cn/" target="_blank">关于我们</a>  -->
+          <!-- <a href="http://docs.siteserver.cn/getting-started/index.html" target="_blank">加入我们</a>  -->
+          <!-- <a href="http://blog.siteserver.cn/" target="_blank">联系我们</a>  -->
+          <a>友情链接</a> 
   
           
           </div>
-          <span>Copyright © 2003-2017 模板建站</span> </div>
+          <span>
+          @if(isset($friend_links) && count($friend_links) > 0)
+            @foreach($friend_links as $link)
+            <a href="">模板建站</a>
+            @endforeach
+          @endif
+          </span> 
+          </div>
       </div>
     </div>
   </div>

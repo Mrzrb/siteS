@@ -10,4 +10,8 @@ class News extends Model
     public function category(){
       return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function getUrl(){
+      return url('/ch'.$this->category_id.'/'.$this->id.'.html');
+    }
 }

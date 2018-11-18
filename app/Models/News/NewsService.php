@@ -11,6 +11,10 @@ class NewsService {
         return News::orderBy('click_num', 'desc')->limit($num)->get();
     }
 
+    public static function relatedNews($num){
+        
+    }
+
     public static function newsPaginationByCategory(int $num, int $categoryId){
         return News::latest()->with('category')->where('category_id', $categoryId)->paginate($num);
     }

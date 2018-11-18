@@ -26,10 +26,15 @@ Route::group(['namespace' => 'Site'], function () {
 
     Route::group(['namespace' => 'Category'], function(){
         Route::get('/ch{id}', 'CategoryController@index');
+        Route::get('/pr{id}', 'CategoryController@prodsChannel');
     });
     Route::group(['namespace' => 'News'], function(){
         
         Route::get('/test', 'NewsController@index');
+        Route::get('/ch{ch}/{new}.html', 'NewsController@index');
+    });
+
+    Route::group(['namespace' => 'Prods'], function(){
         Route::get('/ch{ch}/{new}.html', 'NewsController@index');
     });
 });

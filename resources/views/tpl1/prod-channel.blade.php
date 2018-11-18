@@ -9,7 +9,7 @@
        <ul class="breadcrumbs"><li><a href="/">网站首页</a></li><li> <span>&gt;</span> <a href="./../channels/80.html">友情链接</a> <span>&gt;</span> </li></ul>
         
         
-            @foreach($news as $new)
+            @foreach($ret['prods'] as $new)
                     <div class="la-list03 line-botm clearfix">
                       
                       <div class="la-r-text">
@@ -17,7 +17,7 @@
                         
                         
                           
-                         <a href="{{$new->getUrl()}}" class="htitle-color" target="_blank">{{$new->title}}</a> </h3>
+                         <a href="{{$new->getUrl()}}" class="htitle-color" target="_blank">{{$new->name}}</a> </h3>
                         <div class="mob-author">
                             <span class="time"><i class="iconfont icon-mulutubiao"></i>
                             <a href="http://developer.siteserver.cn/" style="color: #bbb;">{{$new->category->name}}</a>      
@@ -36,7 +36,7 @@
        @endforeach
         <div id="page">           
           
-            {{$news->links()}}
+            {{$ret['prods']->links()}}
               
           </div>
         

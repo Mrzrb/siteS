@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $this->bootView();
     }
 
     /**
@@ -24,5 +26,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    public function bootView(){
+        View::composer(env('tplSN').'.layouts.footer', function($view){
+            $view->with('friend_links', [1,2,3]);
+        });
     }
 }

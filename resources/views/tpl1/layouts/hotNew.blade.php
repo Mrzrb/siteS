@@ -1,48 +1,4 @@
-@extends('tpl1.layouts.app')
-@section('content')
-
-<div id="cont-list">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-8 col-lg-8 cont-left">
-        
-       <ul class="breadcrumbs"><li><a href="/">网站首页</a></li><li> <span>&gt;</span> <a href="./../channels/80.html">友情链接</a> <span>&gt;</span> </li></ul>
-        
-        
-            @foreach($news as $new)
-                    <div class="la-list03 line-botm clearfix">
-                      
-                      <div class="la-r-text">
-                        <h3> 
-                        
-                        
-                          
-                         <a href="{{$new->getUrl()}}" class="htitle-color" target="_blank">{{$new->title}}</a> </h3>
-                        <div class="mob-author">
-                            <span class="time"><i class="iconfont icon-mulutubiao"></i>
-                            <a href="http://developer.siteserver.cn/" style="color: #bbb;">{{$new->category->name}}</a>      
-                            </span>
-                            <span class="time"><i class="iconfont icon-shijian"></i> {{$new->created_at}}</span>
-                            <span class="time liulan"><i class="iconfont icon-faxian"></i> {{rand(0,200)}}</span>
-                            
-                        </div>
-                        <div class="mob-sub"></div>
-                        <div class="tags">
-              <i class="iconfont icon-biaoqian"></i>    
-                        
-                        </div>
-                      </div>
-                    </div>
-       @endforeach
-        <div id="page">           
-          
-            {{$news->links()}}
-              
-          </div>
-        
-        
-      </div>
-      <div class="wrap-right pull-right">
+<div class="wrap-right pull-right">
       
         <div class="widget widget_ztmao_hotpost">
           <div class="box-moder hot-article">
@@ -113,8 +69,3 @@
         </div>
         
       </div>
-    </div>
-  </div>
-</div>
-
-@endsection
