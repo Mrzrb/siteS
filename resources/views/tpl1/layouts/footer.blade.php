@@ -30,7 +30,7 @@
           <span>
           @if(isset($friend_links) && count($friend_links) > 0)
             @foreach($friend_links as $link)
-            <a href="">模板建站</a>
+            <a href="{{$link->url}}">{{$link->fkey}}</a>
             @endforeach
           @endif
           </span> 

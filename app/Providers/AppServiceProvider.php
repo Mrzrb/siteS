@@ -30,7 +30,13 @@ class AppServiceProvider extends ServiceProvider
 
     public function bootView(){
         View::composer(env('tplSN').'.layouts.footer', function($view){
-            $view->with('friend_links', [1,2,3]);
+            $fls = \App\Models\FriendlyLink\FriendlyLinkService::getFriendlyLinks();
+
+            $view->with('friend_links', $fls);
+        });
+
+        View::composer(env('tplSN').'.layouts.top_nav',function($view){
+            $view->with('top_categoryies', \App\Models\Category\CategoryService::getTopNav());
         });
     }
 }

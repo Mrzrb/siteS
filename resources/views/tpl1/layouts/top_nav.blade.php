@@ -10,10 +10,13 @@
       </div>
       <div class="logo mnav"> <a href="./"> <img src="./upload/images/2017/6/29145430455.png" /> </a> </div>
       <div class="pull-right mnav"> <i class="icon icon-search" id="msearch"></i> </div>
+        @if(isset($top_categoryies) && count($top_categoryies)>0)
+        @foreach($top_categoryies as $category)
       <div class="nav-left" id="nav">
+
         <ul class="nav-menu clearfix">
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29">
-            <a href="./channels/131.html">资讯动态 
+            <a href="./channels/131.html">{{$category->name}} 
               <span class="caret"></span>
             </a>
             <ul class="sub-menu">
@@ -22,8 +25,11 @@
             </ul>
           </li>
         </ul>
-        
       </div>
+
+        @endforeach
+        @endif
+        
       <div class="nav-right">
         <ul class="clearfix">
           <li class="wx-li">
