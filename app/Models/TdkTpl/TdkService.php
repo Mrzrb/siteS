@@ -11,6 +11,7 @@ class TdkService{
 
   const TDK_SITE_INDEX = '0';
   const TDK_SITE_NEWS = '1';
+  const TDK_SITE_PROD = '2';
 
   public static function __callStatic($name, $args){
     $ret = self::getInstance()->$name(...$args);
@@ -66,6 +67,11 @@ class TdkService{
 
   private function getSiteNewTdk($data = []){
     $type = self::getSiteTdkType(self::TDK_SITE_NEWS);
+    return self::parseTdk($type, $data);
+  }
+
+  private function getSiteProdTdk($data = []){
+    $type = self::getSiteTdkType(self::TDK_SITE_PROD);
     return self::parseTdk($type, $data);
   }
 

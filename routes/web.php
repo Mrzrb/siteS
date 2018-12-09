@@ -34,7 +34,7 @@ Route::group(['namespace' => 'Site'], function () {
         Route::get('/ch{ch}/{new}.html', 'NewsController@index');
     });
 
-    Route::group(['namespace' => 'Prods'], function(){
-        Route::get('/pr{ch}/{new}.html', 'NewsController@index');
+    Route::group(['namespace' => 'Prod'], function(){
+        Route::get('/pr{ch}/{prod}.html', 'ProdController@index');
     });
 });

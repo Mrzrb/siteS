@@ -8,7 +8,18 @@ use App\Models\News\News;
 
 class Category extends Model
 {
-    public function getUrl(){
-        return url('/ch'.$this->id.'/');
+    public function getUrl()
+    {
+        return siteUrl('/ch'.$this->id.'/');
+    }
+
+    public function hasLatestOneNew()
+    {
+        return $this->hasNews()->orderBy('id', 'desc');
+    }
+
+    public function hasNews()
+    {
+        return $this->hasMany(News::class, 'category_id', 'id');
     }
 }
