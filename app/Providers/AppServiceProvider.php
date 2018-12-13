@@ -30,17 +30,22 @@ class AppServiceProvider extends ServiceProvider
 
     public function bootView()
     {
-        $fls = \App\Models\FriendlyLink\FriendlyLinkService::getFriendlyLinks();
-        View::composer(env('tplSN').'.layouts.footer', function ($view) use ($fls) {
-            $view->with('friend_links', $fls);
-        });
+        try{
+            $fls = \App\Models\FriendlyLink\FriendlyLinkService::getFriendlyLinks();
+            View::composer(env('tplSN').'.layouts.footer', function ($view) use ($fls) {
+                $view->with('friend_links', $fls);
+            });
 
-        View::composer(env('tplSN').'.index', function ($view) use ($fls) {
-            $view->with('friend_links', $fls);
-        });
+            View::composer(env('tplSN').'.index', function ($view) use ($fls) {
+                $view->with('friend_links', $fls);
+            });
 
-        View::composer(env('tplSN').'.layouts.top_nav', function ($view) {
-            $view->with('top_categoryies', \App\Models\Category\CategoryService::getTopNav());
-        });
+            View::composer(env('tplSN').'.layouts.top_nav', function ($view) {
+                $view->with('top_categoryies', \App\Models\Category\CategoryService::getTopNav());
+            });
+        }catch(\Exception $e){
+
+        }
+        
     }
 }
