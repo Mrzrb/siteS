@@ -15,8 +15,8 @@ class CreateSiteEnvsTable extends Migration
     {
         Schema::create('site_envs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
-            $table->string('extra');
+            $table->string('type')->default('');
+            $table->string('extra')->default('');
             $table->timestamps();
         });
     }

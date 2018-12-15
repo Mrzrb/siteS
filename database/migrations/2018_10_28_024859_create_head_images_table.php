@@ -15,8 +15,8 @@ class CreateHeadImagesTable extends Migration
     {
         Schema::create('head_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('images');
-            $table->string('alt');
+            $table->string('images')->default('');
+            $table->string('alt')->default('');
             $table->timestamps();
         });
     }

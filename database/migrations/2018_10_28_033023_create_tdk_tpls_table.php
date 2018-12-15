@@ -15,8 +15,8 @@ class CreateTdkTplsTable extends Migration
     {
         Schema::create('tdk_tpls', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
-            $table->string('tdk');
+            $table->string('type')->default('');
+            $table->string('tdk')->default('');
             $table->timestamps();
         });
     }
