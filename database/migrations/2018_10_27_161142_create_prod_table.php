@@ -18,6 +18,8 @@ class CreateProductTable extends Migration
             $table->string('name', 255)->default('');
             $table->integer('price')->default(0);
             $table->text('detail', 255)->default('');
+            $table->text('img_list')->default('');
+            $table->string('broker', 255)->default('');
             $table->timestamps();
         });
     }
