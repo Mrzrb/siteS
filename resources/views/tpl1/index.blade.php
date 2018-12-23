@@ -56,14 +56,14 @@
       <div class="col-sm-12 col-md-8 col-lg-8 cont-left">
         <div id="hour24" class="clearfix">
           <div class="hour24-title">
-            <h3>科技动态</h3>
+            <h3>热门房源</h3>
           </div>
 
           @foreach($prods as $prod)
           <div class="col-sm-12 col-md-6 col-lg-6 hour24-left">
 
-            <div class="hour24-left-img"> <a href="{{$prod->getUrl()}}" title="{{$prod->title}}" target="_blank"> <img
-                  src="./images/timthumb (5).jpg" alt="{{$prod->title}}" /> </a> </div>
+            <div class="hour24-left-img"> <a href="{{$prod->getUrl()}}" title="{{$prod->title}}" target="_blank"> 
+            <img src="{{$prod->getPicture()[0] ?? ''}}" alt="{{$prod->title}}" /> </a> </div>
             <h3 class="htitle-color" style="font-weight: 400;"><a href="{{$prod->getUrl()}}">{{$prod->name}}</a></h3>
             <div class="mob-author">
               <span class="time"><i class="iconfont icon-shijian"></i> {{$prod->created_at}}</span>

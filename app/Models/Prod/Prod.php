@@ -16,4 +16,8 @@ class Prod extends Model
     {
         return siteUrl('/pr'.$this->category_id.'/'.$this->id.'.html');
     }
+
+    public function getPicture(){
+        return json_decode($this->img_list, true);
+    }
 }
