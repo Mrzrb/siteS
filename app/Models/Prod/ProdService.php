@@ -4,7 +4,7 @@ namespace App\Models\Prod;
 
 class ProdService {
     public static function prodLatest($num){
-        return Prod::latest()->limit($num)->get();
+        return Prod::inRandomOrder()->limit($num)->get();
     }
 
     public static function hotProds($num){
